@@ -52,7 +52,18 @@ def prechargerImagesHTML():
     # La fonction prechargerImagesHTML retourne un texte contenant les
     # préchargements HTML de chaque image du démineur.
 
-    pass
+    images = ''
+    prefixe = '<link rel="preload" href="http://codeboot.org/images/minesweeper/'
+    suffixe = '.png">'
+    tuilesSpeciales = ['blank', 'flag', 'mine', 'mine-red', 'mine-red-x']
+
+    for i in range(9):
+        images += (prefixe + str(i) + suffixe)
+
+    for j in tuilesSpeciales:
+        images += (prefixe + j + suffixe)
+
+    return images
 
 
 def testDemineur():
