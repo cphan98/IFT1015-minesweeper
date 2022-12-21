@@ -154,3 +154,4 @@ def testDemineur():
 
 
 testDemineur()
+init(8, 5)
