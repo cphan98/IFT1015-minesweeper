@@ -62,12 +62,9 @@ def tableauHTML(largeur, hauteur):
     # le tableau.
 
     tableau = ''
+    rangees = rangeesHTML(largeur, hauteur)
+    tableau += ('<table>' + rangees + '</table>')
 
-    if largeur <= 0 or hauteur <= 0:
-        return -1
-    else:
-        rangees = rangeesHTML(largeur, hauteur)
-        tableau += ('<table>' + rangees + '</table>')
     return tableau
 
 
@@ -147,10 +144,6 @@ def testDemineur():
 
     # tableauHTML
 
-    assert tableauHTML(-1, -1) == -1
-    assert tableauHTML(0, -1) == -1
-    assert tableauHTML(1, 0) == -1
-    assert tableauHTML(0, 1) == -1
     assert tableauHTML(
         1, 1) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
     assert tableauHTML(1, 2) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
