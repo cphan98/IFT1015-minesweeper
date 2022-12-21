@@ -18,9 +18,9 @@ def cellulesHTML(longueur):
         return cellules
 
 
-def rangeesHTML(hauteur):
+def rangeesHTML(largeur, hauteur):
 
-    # La fonction rangeesHTML prend comme paramètre un entier positif et
+    # La fonction rangeesHTML prend commes paramètres deux entiers positifs et
     # retourne un texte contenant le code HTML codant le nombre de rangées à
     # inclure dans le tableau. Chaque rangée contient aussi le code qui code
     # les cellules.
@@ -49,3 +49,15 @@ def testDemineur():
         1) == '<td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
     assert cellulesHTML(
         2) == '<td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
+
+    # rangeesHTML
+
+    assert rangeesHTML(-1, -1) == -1
+    assert rangeesHTML(0, 0) == -1
+    assert rangeesHTML(1, 0) == -1
+    assert rangeesHTML(0, 1) == -1
+    assert rangeesHTML(
+        1, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+    assert rangeesHTML(
+        2, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+    assert rangeesHTML(1, 2) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
