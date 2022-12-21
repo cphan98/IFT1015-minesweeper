@@ -47,6 +47,14 @@ def tableauHTML(largeur, hauteur):
     return tableau
 
 
+def prechargerImagesHTML():
+
+    # La fonction prechargerImagesHTML retourne un texte contenant les
+    # préchargements HTML de chaque image du démineur.
+
+    pass
+
+
 def testDemineur():
 
     # La procédure testDemineur teste les fonctions ci-dessus.
