@@ -5,7 +5,8 @@ def cellulesHTML(longueur):
 
     # La fonction cellulesHTML prend comme paramètre un entier positif et
     # retourne un texte contenant le code HTML codant le nombre de cellules à
-    # ajouter dans chaque rangée tableau.
+    # ajouter dans chaque rangée tableau. Chaque cellule contient une image
+    # d'une tuile vide.
 
     pass
 
@@ -25,5 +26,14 @@ def tableauHTML(longueur, hauteur):
     # La fonction tableauHTML prend comme paramètres deux entiers positifs,
     # largeur et hauteur, et retourne un texte contenant code HTML qui code
     # le tableau.
+
+    pass
+
+
+def testDemineur():
+
+    # La procédure testDemineur teste les fonctions ci-dessus.
+
+    # cellulesHTML
 
     pass
