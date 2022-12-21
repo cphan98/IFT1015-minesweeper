@@ -1,6 +1,9 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
+matrice = []
+
+
 def cellulesHTML(largeur, hauteur):
 
     # La fonction cellulesHTML prend comme paramètre deux entiers positifs et
@@ -87,6 +90,14 @@ def prechargerImagesHTML():
         images += (prefixe + j + suffixe)
 
     return images
+
+
+def tableauTuiles(largeur, hauteur):
+
+    # La fonction tableauTuiles prend deux entiers positifs et retourne une
+    # matrice contenant toutes les tuiles du démineur.
+
+    pass
 
 
 def init(largeur, hauteur):
