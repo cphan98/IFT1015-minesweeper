@@ -1,7 +1,7 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
-matrice = []
+tuiles = []
 
 
 def cellulesHTML(largeur, hauteur):
@@ -92,9 +92,9 @@ def prechargerImagesHTML():
     return images
 
 
-def tableauTuiles(largeur, hauteur):
+def matriceTuiles(largeur, hauteur):
 
-    # La fonction tableauTuiles prend deux entiers positifs et retourne une
+    # La fonction matriceTuiles prend deux entiers positifs et retourne une
     # matrice contenant toutes les tuiles du démineur.
 
     pass
