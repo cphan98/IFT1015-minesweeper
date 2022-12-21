@@ -66,6 +66,14 @@ def prechargerImagesHTML():
     return images
 
 
+def ajouterHTML(largeur, hauteur):
+
+    # La procédure prend deux entiers positifs comme paramètres et ajoute le
+    # code HTML à l'élément <div id="main"></div>.
+
+    pass
+
+
 def testDemineur():
 
     # La procédure testDemineur teste les fonctions ci-dessus.
