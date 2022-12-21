@@ -8,10 +8,11 @@ def cellulesHTML(largeur):
     # ajouter dans chaque rangée tableau. Chaque cellule contient une image
     # d'une tuile vide.
 
+    cellules = ''
+
     if largeur <= 0:
         return -1
     else:
-        cellules = ''
         for i in range(largeur):
             cellules += ('<td id="tuile' + str(i) +
                          '"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
