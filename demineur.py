@@ -37,13 +37,20 @@ def rangeesHTML(largeur, hauteur):
         return rangees
 
 
-def tableauHTML(longueur, hauteur):
+def tableauHTML(largeur, hauteur):
 
     # La fonction tableauHTML prend comme paramètres deux entiers positifs,
     # largeur et hauteur, et retourne un texte contenant code HTML qui code
     # le tableau.
 
-    pass
+    tableau = ''
+
+    if largeur <= 0 or hauteur <= 0:
+        return -1
+    else:
+        rangees = rangeesHTML(largeur, hauteur)
+        tableau += ('<table>' + rangees + '</table>')
+    return tableau
 
 
 def testDemineur():
