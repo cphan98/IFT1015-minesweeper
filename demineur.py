@@ -25,14 +25,16 @@ def cellulesParRangeeHTML(largeur, hauteur):
 
     cellules = cellulesHTML(largeur, hauteur)
     rangees = []
-    rangee = 0
 
     for _ in range(hauteur):
-        if rangee >= largeur:
-            rangees.append(''.join(cellules[rangee:]))
+        if len(cellules) == largeur:
+            rangees.append(''.join(cellules[0:]))
+        elif len(cellules) == 0:
+            return rangees
         else:
-            rangees.append(''.join(cellules[rangee: largeur]))
-            rangee += (largeur)
+            rangees.append(''.join(cellules[0:largeur]))
+            for _ in range(largeur):
+                cellules.pop(0)
 
         if rangees[-1] == '':
             rangees.pop()
