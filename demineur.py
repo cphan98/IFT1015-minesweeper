@@ -101,7 +101,7 @@ def matriceTuiles(largeur, hauteur):
     tuiles = []
     tuile = 0
 
-    for rangee in range(hauteur):
+    for _ in range(hauteur):
         cellules = []
 
         for _ in range(largeur):
