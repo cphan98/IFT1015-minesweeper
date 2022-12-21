@@ -19,7 +19,9 @@ def cellulesHTML(largeur, hauteur):
 
 def cellulesParRangeeHTML(largeur, hauteur):
 
-    # La fonction cellulesParRangeeHTML prend comme paramètres deux entiers positif et retourne un tableau de texte contenant les cellules HTML pour chaque rangée du tableau du démineur.
+    # La fonction cellulesParRangeeHTML prend comme paramètres deux entiers
+    # positif et retourne un tableau de texte contenant les cellules HTML
+    # pour chaque rangée du tableau du démineur.
 
     cellules = cellulesHTML(largeur, hauteur)
     rangees = []
@@ -40,16 +42,16 @@ def cellulesParRangeeHTML(largeur, hauteur):
 
 def rangeesHTML(largeur, hauteur):
 
-    # La fonction rangeesHTML prend commes paramètres deux entiers positifs et
-    # retourne un texte contenant le code HTML codant le nombre de rangées à
-    # inclure dans le tableau. Chaque rangée contient aussi le code qui code
-    # les cellules.
+    # La fonction rangeesHTML prend comme paramètres deux entiers positifs et
+    # retourne un texte contenant le code HTML codant chaque rangée du
+    # tableau du démineur.
 
+    cellulesParRangee == cellulesParRangeeHTML(largeur, hauteur)
     rangees = ''
-    cellules = cellulesHTML(largeur)
 
-    for _ in range(hauteur):
-        rangees += ('<tr>' + cellules + '</tr>')
+    for rangee in cellulesParRangee:
+        rangees += ('<tr>' + rangee + '</tr>')
+
     return rangees
 
 
@@ -126,11 +128,14 @@ def testDemineur():
 
     # rangeesHTML
 
+    assert rangeesHTML(0, 0) == ''
+    assert rangeesHTML(0, 1) == ''
+    assert rangeesHTML(1, 0) == ''
     assert rangeesHTML(
-        1, 1) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
-    assert rangeesHTML(
-        2, 1) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
-    assert rangeesHTML(1, 2) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+        1, 1) == '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
+    assert rangeesHTML(1, 2) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+    assert rangeesHTML(2, 1) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+    assert rangeesHTML(2, 2) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile2" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile3" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
 
     # tableauHTML
 
