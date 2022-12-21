@@ -62,7 +62,7 @@ def testDemineur():
     # rangeesHTML
 
     assert rangeesHTML(-1, -1) == -1
-    assert rangeesHTML(0, 0) == -1
+    assert rangeesHTML(0, -1) == -1
     assert rangeesHTML(1, 0) == -1
     assert rangeesHTML(0, 1) == -1
     assert rangeesHTML(
@@ -70,6 +70,17 @@ def testDemineur():
     assert rangeesHTML(
         2, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
     assert rangeesHTML(1, 2) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+
+    # tableauHTML
+
+    assert tableauHTML(-1, -1) == -1
+    assert tableauHTML(0, -1) == -1
+    assert tableauHTML(1, 0) == -1
+    assert tableauHTML(0, 1) == -1
+    assert tableauHTML(
+        1, 1) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
+    assert tableauHTML(2, 1) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
+    assert tableauHTML(1, 2) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
 
 
 testDemineur()
