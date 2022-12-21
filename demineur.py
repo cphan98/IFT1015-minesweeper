@@ -1,18 +1,18 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
-def cellulesHTML(largeur):
+def cellulesHTML(largeur, hauteur):
 
-    # La fonction cellulesHTML prend comme paramètre un entier positif et
-    # retourne un texte contenant le code HTML codant le nombre de cellules à
-    # ajouter dans chaque rangée tableau. Chaque cellule contient une image
-    # d'une tuile vide.
+    # La fonction cellulesHTML prend comme paramètre deux entiers positifs et
+    # retourne un tableau contenant toutes les cellules du tableau du
+    # démineur. Chaque cellule contient une image d'une tuile vide.
 
-    cellules = ''
+    cellules = []
+    nbCellules = largeur * hauteur
 
-    for i in range(largeur):
-        cellules += ('<td id="tuile' + str(i) +
-                     '"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
+    for i in range(nbCellules):
+        cellules.append('<td id="tuile' + str(i) +
+                        '" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
     return cellules
 
 
@@ -80,18 +80,21 @@ def testDemineur():
 
     # cellulesHTML
 
-    assert cellulesHTML(
-        1) == '<td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
-    assert cellulesHTML(
-        2) == '<td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
+    assert cellulesHTML(0, 0) == []
+    assert cellulesHTML(0, 1) == []
+    assert cellulesHTML(1, 0) == []
+    assert cellulesHTML(1, 1) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
+    assert cellulesHTML(1, 2) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>', '<td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
 
     # rangeesHTML
 
     assert rangeesHTML(
-        1, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+        1, 1) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
     assert rangeesHTML(
-        2, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
-    assert rangeesHTML(1, 2) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+        2, 1) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
+    assert rangeesHTML(1, 2) == '<tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
 
     # tableauHTML
 
@@ -100,9 +103,9 @@ def testDemineur():
     assert tableauHTML(1, 0) == -1
     assert tableauHTML(0, 1) == -1
     assert tableauHTML(
-        1, 1) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
-    assert tableauHTML(2, 1) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
-    assert tableauHTML(1, 2) == '<table><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
+        1, 1) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
+    assert tableauHTML(2, 1) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
+    assert tableauHTML(1, 2) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
 
 
 testDemineur()
