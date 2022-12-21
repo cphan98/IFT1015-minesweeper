@@ -1,11 +1,11 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
-def colonnesHTML(longueur):
+def cellulesHTML(longueur):
 
-    # La fonction colonnesHTML prend comme paramètre un entier positif et
-    # retourne un texte contenant le code HTML codant le nombre de colonnes à
-    # ajouter dans le tableau.
+    # La fonction cellulesHTML prend comme paramètre un entier positif et
+    # retourne un texte contenant le code HTML codant le nombre de cellules à
+    # ajouter dans chaque rangée tableau.
 
     pass
 
@@ -15,7 +15,7 @@ def rangeesHTML(hauteur):
     # La fonction rangeesHTML prend comme paramètre un entier positif et
     # retourne un texte contenant le code HTML codant le nombre de rangées à
     # inclure dans le tableau. Chaque rangée contient aussi le code qui code
-    # les colonnes.
+    # les cellules.
 
     pass
 
