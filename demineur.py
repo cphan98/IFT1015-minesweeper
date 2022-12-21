@@ -87,10 +87,10 @@ def prechargerImagesHTML():
     return images
 
 
-def ajouterHTML(largeur, hauteur):
+def init(largeur, hauteur):
 
-    # La procédure prend deux entiers positifs comme paramètres et ajoute le
-    # code HTML à l'élément <div id="main"></div>.
+    # La procédure init prend deux entiers positifs comme paramètres et
+    # ajoute le code HTML à l'élément <div id="main"></div>.
 
     if largeur <= 0 or hauteur <= 0:
         return -1
