@@ -131,9 +131,8 @@ def init(largeur, hauteur):
         css = '<style>#main table {border: 1px solid black;} #main table td {width: 25px; height: 25px; border: none;} img {width: 25px; height: 25px;}</style>'
         html = css + images + tableau
         main.innerHTML = html
-
-    global tuiles
-    tuiles = matriceTuiles(largeur, hauteur)
+        global tuiles
+        tuiles = matriceTuiles(largeur, hauteur)
 
 
 def testDemineur():
