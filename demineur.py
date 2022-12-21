@@ -163,6 +163,16 @@ def testDemineur():
     assert tableauHTML(2, 1) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
     assert tableauHTML(2, 2) == '<table><tr><td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr><tr><td id="tuile2" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile3" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr></table>'
 
+    # matriceTuiles
+
+    assert matriceTuiles(0, 0) == -1
+    assert matriceTuiles(0, 1) == -1
+    assert matriceTuiles(1, 0) == -1
+    assert matriceTuiles(1, 1) == [[tuile0]]
+    assert matriceTuiles(1, 2) == [[tuile0], [tuile1]]
+    assert matriceTuiles(2, 1) == [[tuile0, tuile1]]
+    assert matriceTuiles(2, 2) == [[tuile0, tuile1], [tuile2, tuile3]]
+
 
 testDemineur()
 init(8, 5)
