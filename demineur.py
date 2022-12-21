@@ -4,8 +4,8 @@
 def cellulesHTML(largeur, hauteur):
 
     # La fonction cellulesHTML prend comme paramètre deux entiers positifs et
-    # retourne un tableau contenant toutes les cellules du tableau du
-    # démineur. Chaque cellule contient une image d'une tuile vide.
+    # retourne un tableau de texte contenant toutes les cellules HTML du
+    # tableau du démineur. Chaque cellule contient une image d'une tuile vide.
 
     cellules = []
     nbCellules = largeur * hauteur
@@ -14,6 +14,19 @@ def cellulesHTML(largeur, hauteur):
         cellules.append('<td id="tuile' + str(i) +
                         '" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
     return cellules
+
+
+def cellulesParRangeeHTML(largeur, hauteur):
+
+    # La fonction cellulesParRangeeHTML prend comme paramètres deux entiers positif et retourne un tableau de texte contenant les cellules HTML pour chaque rangée du tableau du démineur.
+
+    cellules = cellulesHTML(largeur, hauteur)
+    rangees = []
+    for _ in range(hauteur):
+        rangee = 0
+        rangees.append(','.join(cellules[rangee: largeur + 1]))
+        rangee += (largeur + 1)
+    return rangees
 
 
 def rangeesHTML(largeur, hauteur):
