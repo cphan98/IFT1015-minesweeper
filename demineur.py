@@ -95,7 +95,15 @@ def ajouterHTML(largeur, hauteur):
     # La procédure prend deux entiers positifs comme paramètres et ajoute le
     # code HTML à l'élément <div id="main"></div>.
 
-    pass
+    if largeur <= 0 or hauteur <= 0:
+        return -1
+    else:
+        main = document.querySelector('#main')
+        images = prechargerImagesHTML()
+        tableau = tableauHTML(largeur, hauteur)
+        css = '<style>#main table {border: 1px solid black;} #main table td {width: 5px; height: 5px; border: none;} img {width: 5px; height: 5px;}</style>'
+        html = css + images + tableau
+        main.innerHTML = html
 
 
 def testDemineur():
