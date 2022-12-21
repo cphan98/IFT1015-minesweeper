@@ -100,6 +100,7 @@ def matriceTuiles(largeur, hauteur):
     if largeur <= 0 or hauteur <= 0:
         return -1
     else:
+        global tuiles
         tuiles = []
         tuile = 0
 
