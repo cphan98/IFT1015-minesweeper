@@ -115,10 +115,11 @@ def matriceTuiles(largeur, hauteur):
     return tuiles
 
 
-def placerMines(largeur, hauteur):
+def placerMines(tuiles):
 
-    # La fonction placerMines prend comme paramètres deux entiers positifs
-    # retourne un tableau contenant les tuiles qui ont une mine.
+    # La fonction placerMines prend comme paramètre une matrice de textes
+    # contenant toutes les tuiles du démineur et retourne un tableau
+    # contenant les tuiles qui ont une mine.
 
     pass
 
