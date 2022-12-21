@@ -118,7 +118,8 @@ def matriceTuiles(largeur, hauteur):
 def init(largeur, hauteur):
 
     # La procédure init prend deux entiers positifs comme paramètres et
-    # ajoute le code HTML à l'élément <div id="main"></div>.
+    # ajoute le code HTML à l'élément <div id="main"></div>. La matrice des
+    # tuiles du démineur est mise à jour.
 
     if largeur <= 0 or hauteur <= 0:
         return -1
@@ -129,6 +130,9 @@ def init(largeur, hauteur):
         css = '<style>#main table {border: 1px solid black;} #main table td {width: 25px; height: 25px; border: none;} img {width: 25px; height: 25px;}</style>'
         html = css + images + tableau
         main.innerHTML = html
+
+    global tuiles
+    tuiles = matriceTuiles(largeur, hauteur)
 
 
 def testDemineur():
