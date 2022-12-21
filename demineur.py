@@ -100,7 +100,7 @@ def init(largeur, hauteur):
         main = document.querySelector('#main')
         images = prechargerImagesHTML()
         tableau = tableauHTML(largeur, hauteur)
-        css = '<style>#main table {border: 1px solid black;} #main table td {width: 5px; height: 5px; border: none;} img {width: 5px; height: 5px;}</style>'
+        css = '<style>#main table {border: 1px solid black;} #main table td {width: 25px; height: 25px; border: none;} img {width: 25px; height: 25px;}</style>'
         html = css + images + tableau
         main.innerHTML = html
 
