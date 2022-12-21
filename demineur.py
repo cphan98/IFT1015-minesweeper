@@ -10,13 +10,10 @@ def cellulesHTML(largeur):
 
     cellules = ''
 
-    if largeur <= 0:
-        return -1
-    else:
-        for i in range(largeur):
-            cellules += ('<td id="tuile' + str(i) +
-                         '"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
-        return cellules
+    for i in range(largeur):
+        cellules += ('<td id="tuile' + str(i) +
+                     '"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
+    return cellules
 
 
 def rangeesHTML(largeur, hauteur):
@@ -56,8 +53,6 @@ def testDemineur():
 
     # cellulesHTML
 
-    assert cellulesHTML(-1) == -1
-    assert cellulesHTML(0) == -1
     assert cellulesHTML(
         1) == '<td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td>'
     assert cellulesHTML(
