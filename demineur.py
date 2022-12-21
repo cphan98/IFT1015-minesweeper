@@ -97,23 +97,20 @@ def matriceTuiles(largeur, hauteur):
     # La fonction matriceTuiles prend deux entiers positifs et retourne une
     # matrice contenant toutes les tuiles du démineur.
 
-    if largeur <= 0 or hauteur <= 0:
-        return -1
-    else:
-        global tuiles
-        tuiles = []
-        tuile = 0
+    global tuiles
+    tuiles = []
+    tuile = 0
 
-        for rangee in range(hauteur):
-            cellules = []
+    for rangee in range(hauteur):
+        cellules = []
 
-            for _ in range(largeur):
-                cellules.append('tuile' + str(tuile))
-                tuile += 1
+        for _ in range(largeur):
+            cellules.append('tuile' + str(tuile))
+            tuile += 1
 
-            tuiles.append(cellules)
+        tuiles.append(cellules)
 
-        return tuiles
+    return tuiles
 
 
 def init(largeur, hauteur):
@@ -184,9 +181,6 @@ def testDemineur():
 
     # matriceTuiles
 
-    assert matriceTuiles(0, 0) == -1
-    assert matriceTuiles(0, 1) == -1
-    assert matriceTuiles(1, 0) == -1
     assert matriceTuiles(1, 1) == [['tuile0']]
     assert matriceTuiles(1, 2) == [['tuile0'], ['tuile1']]
     assert matriceTuiles(2, 1) == [['tuile0', 'tuile1']]
