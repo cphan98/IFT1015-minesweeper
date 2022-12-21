@@ -13,6 +13,7 @@ def cellulesHTML(largeur, hauteur):
     for i in range(nbCellules):
         cellules.append('<td id="tuile' + str(i) +
                         '" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>')
+
     return cellules
 
 
@@ -22,10 +23,18 @@ def cellulesParRangeeHTML(largeur, hauteur):
 
     cellules = cellulesHTML(largeur, hauteur)
     rangees = []
+    rangee = 0
+
     for _ in range(hauteur):
-        rangee = 0
-        rangees.append(','.join(cellules[rangee: largeur + 1]))
-        rangee += (largeur + 1)
+        if rangee >= largeur:
+            rangees.append(''.join(cellules[rangee:]))
+        else:
+            rangees.append(''.join(cellules[rangee: largeur]))
+            rangee += (largeur)
+
+        if rangees[-1] == '':
+            rangees.pop()
+
     return rangees
 
 
@@ -100,6 +109,20 @@ def testDemineur():
         '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
     assert cellulesHTML(1, 2) == [
         '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>', '<td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
+
+    # cellulesParRangeeHTML
+
+    assert cellulesParRangeeHTML(0, 0) == []
+    assert cellulesParRangeeHTML(0, 1) == []
+    assert cellulesParRangeeHTML(1, 0) == []
+    assert cellulesParRangeeHTML(1, 1) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
+    assert cellulesParRangeeHTML(1, 2) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>', '<td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
+    assert cellulesParRangeeHTML(2, 1) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
+    assert cellulesParRangeeHTML(2, 2) == [
+        '<td id="tuile0" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile1" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>', '<td id="tuile2" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td><td id="tuile3" onclick=""><img src="http://codeboot.org/images/minesweeper/blank.png"></td>']
 
     # rangeesHTML
 
