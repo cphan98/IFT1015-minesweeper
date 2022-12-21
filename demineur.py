@@ -1,7 +1,9 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
-tuiles = []
+tuiles = []     # matrice contenant toutes les tuiles du démineur
+nbMines = 0     # nombre de mines présents dans le jeu
+mines = []      # liste des tuiles contenant une mine
 
 
 def cellulesHTML(largeur, hauteur):
@@ -111,6 +113,15 @@ def matriceTuiles(largeur, hauteur):
         tuiles.append(cellules)
 
     return tuiles
+
+
+def placerMines(tuiles):
+
+    # La fonction placerMines prend comme paramètre une matrice de textes
+    # contenant toutes les tuiles du démineur et retourne un tableau
+    # contenant les tuiles qui ont une mine.
+
+    pass
 
 
 def init(largeur, hauteur):
