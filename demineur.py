@@ -26,11 +26,12 @@ def rangeesHTML(largeur, hauteur):
     # inclure dans le tableau. Chaque rangée contient aussi le code qui code
     # les cellules.
 
+    rangees = ''
+    cellules = cellulesHTML(largeur)
+
     if largeur <= 0 or hauteur <= 0:
         return -1
     else:
-        rangees = ''
-        cellules = cellulesHTML(largeur)
         for _ in range(hauteur):
             rangees += ('<tr>' + cellules + '</tr>')
         return rangees
