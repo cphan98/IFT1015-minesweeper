@@ -29,12 +29,9 @@ def rangeesHTML(largeur, hauteur):
     rangees = ''
     cellules = cellulesHTML(largeur)
 
-    if largeur <= 0 or hauteur <= 0:
-        return -1
-    else:
-        for _ in range(hauteur):
-            rangees += ('<tr>' + cellules + '</tr>')
-        return rangees
+    for _ in range(hauteur):
+        rangees += ('<tr>' + cellules + '</tr>')
+    return rangees
 
 
 def tableauHTML(largeur, hauteur):
@@ -68,10 +65,6 @@ def testDemineur():
 
     # rangeesHTML
 
-    assert rangeesHTML(-1, -1) == -1
-    assert rangeesHTML(0, -1) == -1
-    assert rangeesHTML(1, 0) == -1
-    assert rangeesHTML(0, 1) == -1
     assert rangeesHTML(
         1, 1) == '<tr><td id="tuile0"><img src="http://codeboot.org/images/minesweeper/blank.png"></td></tr>'
     assert rangeesHTML(
