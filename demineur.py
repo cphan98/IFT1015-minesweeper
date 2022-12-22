@@ -205,7 +205,7 @@ def clic(tuile):
         if tuile in mines:
             mine = document.querySelector('#' + tuile)
             mine.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red.png"'
-            # devoilerMines()
+            devoilerMines()
             # devoilerDrapeaux()
             alert('Défaite!')
             return
