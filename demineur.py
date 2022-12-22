@@ -1,7 +1,10 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
-# Le code suivant programme...
+# Le code suivant programme un simple jeu de démineur en utilisant les
+# propriétés HTML pour créer la partie visuelle du jeu. Les dimensions largeur
+# et hauteur sont définies lorsque la fonction init est appelée. Par défaut,
+# le jeu est de dimensions 8 x 5.
 
 tuiles = []             # matrice contenant toutes les tuiles du démineur
 tuilesCliquees = []     # liste des tuiles cliquées
