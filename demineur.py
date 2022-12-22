@@ -174,6 +174,10 @@ def retirerDrapeau(tuile):
     # tuile devient alors une tuile vide. La liste des tuiles marquées est
     # mise à jour.
 
+    global drapeaux
+    drapeau = document.querySelector('#' + tuile)
+    drapeau.innerHTML = '<img src="http://codeboot.org/images/minesweeper/blank.png"'
+
     drapeaux.pop(drapeaux.index(tuile))
 
 
