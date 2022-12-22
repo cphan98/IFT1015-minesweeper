@@ -161,8 +161,8 @@ def ajouterDrapeau(tuile):
     # est mise à jour.
 
     global drapeaux
-    tuile = document.querySelector('#' + tuile)
-    tuile.innerHTML = '<img src="http://codeboot.org/images/minesweeper/flag.png"'
+    drapeau = document.querySelector('#' + tuile)
+    drapeau.innerHTML = '<img src="http://codeboot.org/images/minesweeper/flag.png"'
 
     drapeaux.append(tuile)
 
