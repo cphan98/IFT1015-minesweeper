@@ -175,6 +175,15 @@ def init(largeur, hauteur):
         tuiles = matriceTuiles(nbColonnes, nbRangees)
 
 
+def clic():
+
+    # La fonction clic prend comme paramètre/s ... et détermine ce qu'il faut
+    # faire selon le type du clic (avec ou sans la touche SHIFT) et selon la
+    # tuile cliquée.
+
+    pass
+
+
 def testDemineur():
 
     # La procédure testDemineur teste les fonctions ci-dessus.
