@@ -155,6 +155,9 @@ def init(largeur, hauteur):
     # ajoute le code HTML à l'élément <div id="main"></div>. La matrice des
     # tuiles du démineur est mise à jour.
 
+    global nbClics
+    nbClics = 0
+
     if largeur <= 0 or hauteur <= 0:
         return -1
     else:
