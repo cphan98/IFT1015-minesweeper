@@ -3,13 +3,14 @@
 
 # Le code suivant programme...
 
-nbRangees = 0   # nombre de rangees du démineur
-nbColonnes = 0  # nombre de colonnes du démineur
-tuiles = []     # matrice contenant toutes les tuiles du démineur
-nbMines = 0     # nombre de mines présents dans le jeu
-mines = []      # liste des tuiles contenant une mine
-nbClics = 0     # nombre de clics de la souris sur le jeu
-drapeaux = []   # liste de tuiles avec un drapeau
+tuiles = []         # matrice contenant toutes les tuiles du démineur
+tuilesCliquees = []  # liste des tuiles cliquées
+mines = []          # liste des tuiles contenant une mine
+drapeaux = []       # liste de tuiles avec un drapeau
+nbRangees = 0       # nombre de rangees du démineur
+nbColonnes = 0      # nombre de colonnes du démineur
+nbMines = 0         # nombre de mines présents dans le jeu
+nbClics = 0         # nombre de clics de la souris sur le jeu
 
 
 def cellulesHTML(largeur, hauteur):
@@ -160,8 +161,17 @@ def devoilerMines():
     global mines
 
     for mine in mines:
-        devoiler = document.querySelector('#' + mine)
-        devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
+        if mine not in drapeaux:
+            devoiler = document.querySelector('#' + mine)
+            devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
+
+
+def devoilerDrapeaux():
+
+    # La procédure devoilerDrapeaux dévoile les tuiles qui sont marquées d'un
+    # drapeau et qui ne contiennent pas de mines.
+
+    pass
 
 
 def init(largeur, hauteur):
@@ -186,14 +196,6 @@ def init(largeur, hauteur):
         main.innerHTML = html
         global tuiles
         tuiles = matriceTuiles(nbColonnes, nbRangees)
-
-
-def devoilerDrapeaux():
-
-    # La procédure devoilerDrapeaux dévoile les tuiles qui sont marquées d'un
-    # drapeau et qui ne contiennent pas de mines.
-
-    pass
 
 
 def clic(tuile):
