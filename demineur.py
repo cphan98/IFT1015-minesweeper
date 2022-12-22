@@ -181,7 +181,16 @@ def clic():
     # faire selon le type du clic (avec ou sans la touche SHIFT) et selon la
     # tuile cliquée.
 
-    pass
+    global nbRangees, nbColonnes, mines, nbClics
+    calculerNbClics()
+
+    if nbClics == 1:
+        mines = placerMines(nbColonnes, nbRangees)
+
+    if event.shiftKey == True:
+        pass
+    else:
+        pass
 
 
 def testDemineur():
