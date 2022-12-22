@@ -175,11 +175,11 @@ def init(largeur, hauteur):
         tuiles = matriceTuiles(nbColonnes, nbRangees)
 
 
-def clic():
+def clic(tuile):
 
-    # La fonction clic prend comme paramètre/s ... et détermine ce qu'il faut
-    # faire selon le type du clic (avec ou sans la touche SHIFT) et selon la
-    # tuile cliquée.
+    # La fonction clic prend comme paramètre un texte de l'identifiant d'une
+    # tuile cliquée et détermine ce qu'il faut faire selon le type du clic
+    # (avec ou sans la touche SHIFT) et selon la tuile cliquée.
 
     global nbRangees, nbColonnes, mines, nbClics
     calculerNbClics()
