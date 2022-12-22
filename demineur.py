@@ -115,13 +115,27 @@ def matriceTuiles(largeur, hauteur):
     return tuiles
 
 
-def placerMines(tuiles):
+def placerMines(largeur, hauteur):
 
-    # La fonction placerMines prend comme paramètre une matrice de textes
-    # contenant toutes les tuiles du démineur et retourne un tableau
-    # contenant les tuiles qui ont une mine.
+    # La fonction placerMines prend comme paramètres deux entiers positifs et
+    # retourne un tableau de texte contenant les tuiles qui cachent une mine.
+    # Les tuiles sont choisies aléatoirement.
 
-    pass
+    global tuiles, nbMines, mines
+    mines = []
+    repeter = True
+
+    while repeter:
+        rangee = math.floor(hauteur * random())
+        colonne = math.floor(largeur * random())
+        tuile = tuiles[rangee][colonne]
+
+        if tuile not in mines:
+            mines.append(tuile)
+
+        repeter = len(mines) <= nbMines
+
+    return mines
 
 
 def init(largeur, hauteur):
