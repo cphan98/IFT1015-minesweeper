@@ -1,9 +1,12 @@
 # Hoang-Thi-Thi Cynthia Phan 20220019
 # Vincent Hoang 20183549
 
+# Le code suivant programme...
+
 tuiles = []     # matrice contenant toutes les tuiles du démineur
 nbMines = 0     # nombre de mines présents dans le jeu
 mines = []      # liste des tuiles contenant une mine
+nbClics = 0     # nombre de clics de la souris sur le jeu
 
 
 def cellulesHTML(largeur, hauteur):
@@ -136,6 +139,15 @@ def placerMines(largeur, hauteur):
         repeter = len(mines) < nbMines
 
     return mines
+
+
+def calculerNbClics():
+
+    # La fonction calculerNbClics incrémente de 1 le nombre de clics
+    # lorsqu'une tuile est cliquée avec le bouton principal (bouton gauche)
+    # de la souris et met à jour nbClics.
+
+    pass
 
 
 def init(largeur, hauteur):
