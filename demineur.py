@@ -152,6 +152,18 @@ def calculerNbClics():
     nbClics += 1
 
 
+def devoilerMines():
+
+    # La procédure devoilerMines dévoile l'emplacement de toutes les mines
+    # dans le jeu.
+
+    global mines
+
+    for mine in mines:
+        devoiler = document.querySelector('#' + mine)
+        devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
+
+
 def init(largeur, hauteur):
 
     # La procédure init prend deux entiers positifs comme paramètres et
@@ -176,21 +188,12 @@ def init(largeur, hauteur):
         tuiles = matriceTuiles(nbColonnes, nbRangees)
 
 
-def devoilerMines():
-
-    # La procédure devoilerMines dévoile l'emplacement de toutes les mines
-    # dans le jeu.
-
-    global mines
-
-    for mine in mines:
-        devoiler = document.querySelector('#' + mine)
-        devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
-
-
 def devoilerDrapeaux():
 
-    # La procédure dévoile
+    # La procédure devoilerDrapeaux dévoile les tuiles qui sont marquées d'un
+    # drapeau et qui ne contiennent pas de mines.
+
+    pass
 
 
 def clic(tuile):
