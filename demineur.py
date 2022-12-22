@@ -190,7 +190,13 @@ def clic(tuile):
     if event.shiftKey == True:
         pass
     else:
-        pass
+        if tuile in mines:
+            mine = document.querySelector('#' + tuile)
+            mine.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red.png"'
+            # devoilerMines()
+            # devoilerDrapeaux()
+            alert('Défaite!')
+            return
 
 
 def testDemineur():
