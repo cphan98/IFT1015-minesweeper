@@ -3,14 +3,14 @@
 
 # Le code suivant programme...
 
-tuiles = []         # matrice contenant toutes les tuiles du démineur
-tuilesCliquees = []  # liste des tuiles cliquées
-mines = []          # liste des tuiles contenant une mine
-drapeaux = []       # liste de tuiles avec un drapeau
-nbRangees = 0       # nombre de rangees du démineur
-nbColonnes = 0      # nombre de colonnes du démineur
-nbMines = 0         # nombre de mines présents dans le jeu
-nbClics = 0         # nombre de clics de la souris sur le jeu
+tuiles = []             # matrice contenant toutes les tuiles du démineur
+tuilesCliquees = []     # liste des tuiles cliquées
+mines = []              # liste des tuiles contenant une mine
+drapeaux = []           # liste de tuiles avec un drapeau
+nbRangees = 0           # nombre de rangees du démineur
+nbColonnes = 0          # nombre de colonnes du démineur
+nbMines = 0             # nombre de mines présents dans le jeu
+nbClics = 0             # nombre de clics de la souris sur le jeu
 
 
 def cellulesHTML(largeur, hauteur):
@@ -161,7 +161,7 @@ def devoilerMines():
     global mines
 
     for mine in mines:
-        if mine not in drapeaux:
+        if mine not in drapeaux and mine not in tuilesCliquees:
             devoiler = document.querySelector('#' + mine)
             devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
 
