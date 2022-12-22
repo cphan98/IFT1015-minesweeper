@@ -143,11 +143,11 @@ def placerMines(largeur, hauteur):
 
 def calculerNbClics():
 
-    # La fonction calculerNbClics incrémente de 1 le nombre de clics
-    # lorsqu'une tuile est cliquée avec le bouton principal (bouton gauche)
-    # de la souris et met à jour nbClics.
+    # La fonction calculerNbClics incrémente de 1 le nombre de clics nbClics.
 
-    pass
+    global nbClics
+    nbClics = 0
+    nbClics += 1
 
 
 def init(largeur, hauteur):
