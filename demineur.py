@@ -9,6 +9,7 @@ tuiles = []     # matrice contenant toutes les tuiles du démineur
 nbMines = 0     # nombre de mines présents dans le jeu
 mines = []      # liste des tuiles contenant une mine
 nbClics = 0     # nombre de clics de la souris sur le jeu
+drapeaux = []   # liste de tuiles avec un drapeau
 
 
 def cellulesHTML(largeur, hauteur):
@@ -185,6 +186,11 @@ def devoilerMines():
     for mine in mines:
         devoiler = document.querySelector('#' + mine)
         devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
+
+
+def devoilerDrapeaux():
+
+    # La procédure dévoile
 
 
 def clic(tuile):
