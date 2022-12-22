@@ -180,7 +180,11 @@ def devoilerMines():
     # La procédure devoilerMines dévoile l'emplacement de toutes les mines
     # dans le jeu.
 
-    pass
+    global mines
+
+    for mine in mines:
+        devoiler = document.querySelector('#' + mine)
+        devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine.png"'
 
 
 def clic(tuile):
