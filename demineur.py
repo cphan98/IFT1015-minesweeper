@@ -175,6 +175,14 @@ def init(largeur, hauteur):
         tuiles = matriceTuiles(nbColonnes, nbRangees)
 
 
+def devoilerMines():
+
+    # La procédure devoilerMines dévoile l'emplacement de toutes les mines
+    # dans le jeu.
+
+    pass
+
+
 def clic(tuile):
 
     # La fonction clic prend comme paramètre un texte de l'identifiant d'une
