@@ -205,22 +205,26 @@ def clic(tuile):
     # tuile cliquée et détermine ce qu'il faut faire selon le type du clic
     # (avec ou sans la touche SHIFT) et selon la tuile cliquée.
 
-    global nbRangees, nbColonnes, mines, nbClics
+    global nbRangees, nbColonnes, mines, nbClics, tuilesCliquees
     calculerNbClics()
 
     if nbClics == 1:
         mines = placerMines(nbColonnes, nbRangees)
 
-    if event.shiftKey == True:
-        pass
-    else:
-        if tuile in mines:
-            mine = document.querySelector('#' + tuile)
-            mine.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red.png"'
-            devoilerMines()
-            # devoilerDrapeaux()
-            alert('Défaite!')
-            return
+    if tuile not in tuilesCliquees:
+        tuilesCliquees.append(tuile)
+
+        if event.shiftKey == True:
+            pass
+        else:
+            if tuile in mines:
+                mine = document.querySelector('#' + tuile)
+                mine.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red.png"'
+
+                devoilerMines()
+                # devoilerDrapeaux()
+                alert('Défaite!')
+                return
 
 
 def testDemineur():
