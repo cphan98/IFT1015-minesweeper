@@ -210,7 +210,7 @@ def clic(tuile):
     # tuile cliquée et détermine ce qu'il faut faire selon le type du clic
     # (avec ou sans la touche SHIFT) et selon la tuile cliquée.
 
-    global nbRangees, nbColonnes, mines, nbClics, tuilesCliquees
+    global nbRangees, nbColonnes, mines, nbClics, tuilesCliquees, drapeaux
     calculerNbClics()
 
     if nbClics == 1:
@@ -220,7 +220,12 @@ def clic(tuile):
         tuilesCliquees.append(tuile)
 
         if event.shiftKey == True:
-            pass
+            if tuile not in drapeaux:
+                # retirerDrapeau(tuile)
+                drapeaux.append(tuile)
+            else:
+                # ajouterDrapeau(tuile)
+                drapeaux.pop(drapeaux.index(tuile))
         else:
             if tuile in mines:
                 mine = document.querySelector('#' + tuile)
