@@ -158,7 +158,7 @@ def devoilerMines():
     # La procédure devoilerMines dévoile l'emplacement de toutes les mines
     # dans le jeu.
 
-    global mines
+    global mines, drapeaux, tuilesCliquees
 
     for mine in mines:
         if mine not in drapeaux and mine not in tuilesCliquees:
