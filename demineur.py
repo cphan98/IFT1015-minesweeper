@@ -171,7 +171,12 @@ def devoilerDrapeaux():
     # La procédure devoilerDrapeaux dévoile les tuiles qui sont marquées d'un
     # drapeau et qui ne contiennent pas de mines.
 
-    pass
+    global mines, drapeaux
+
+    for drapeau in drapeaux:
+        if drapeau not in mines:
+            devoiler = document.querySelector('#' + drapeau)
+            devoiler.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red-x.png"'
 
 
 def init(largeur, hauteur):
