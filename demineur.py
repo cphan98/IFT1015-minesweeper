@@ -3,6 +3,8 @@
 
 # Le code suivant programme...
 
+nbRangees = 0   # nombre de rangees du démineur
+nbColonnes = 0  # nombre de colonnes du démineur
 tuiles = []     # matrice contenant toutes les tuiles du démineur
 nbMines = 0     # nombre de mines présents dans le jeu
 mines = []      # liste des tuiles contenant une mine
@@ -155,20 +157,22 @@ def init(largeur, hauteur):
     # ajoute le code HTML à l'élément <div id="main"></div>. La matrice des
     # tuiles du démineur est mise à jour.
 
-    global nbClics
+    global nbRangees, nbColonnes, nbClics
+    nbRangees = hauteur
+    nbColonnes = largeur
     nbClics = 0
 
-    if largeur <= 0 or hauteur <= 0:
+    if nbColonnes <= 0 or nbRangees <= 0:
         return -1
     else:
         main = document.querySelector('#main')
         images = prechargerImagesHTML()
-        tableau = tableauHTML(largeur, hauteur)
+        tableau = tableauHTML(nbColonnes, nbRangees)
         css = '<style>#main table {border: 1px solid black;} #main table td {width: 25px; height: 25px; border: none;} img {width: 25px; height: 25px;}</style>'
         html = css + images + tableau
         main.innerHTML = html
         global tuiles
-        tuiles = matriceTuiles(largeur, hauteur)
+        tuiles = matriceTuiles(nbColonnes, nbRangees)
 
 
 def testDemineur():
