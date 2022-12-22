@@ -153,16 +153,6 @@ def calculerNbClics():
     nbClics += 1
 
 
-def retirerDrapeau(tuile):
-
-    # La procédure retirerDrapeau prend comme paramètre un texte de
-    # l'identifiant d'une tuile ayant déjà un drapeau et le lui retire. La
-    # tuile devient alors une tuile vide. La liste des tuiles marquées est
-    # mise à jour.
-
-    pass
-
-
 def ajouterDrapeau(tuile):
 
     # La procéure ajouterDrapeau prend comme paramètre un texte de
@@ -170,7 +160,21 @@ def ajouterDrapeau(tuile):
     # La tuile est donc marquée d'une drapeau. La liste des tuiles marquées
     # est mise à jour.
 
-    pass
+    global drapeaux
+    tuile = document.querySelector('#' + tuile)
+    tuile.innerHTML = '<img src="http://codeboot.org/images/minesweeper/flag.png"'
+
+    drapeaux.append(tuile)
+
+
+def retirerDrapeau(tuile):
+
+    # La procédure retirerDrapeau prend comme paramètre un texte de
+    # l'identifiant d'une tuile ayant déjà un drapeau et le lui retire. La
+    # tuile devient alors une tuile vide. La liste des tuiles marquées est
+    # mise à jour.
+
+    drapeaux.pop(drapeaux.index(tuile))
 
 
 def devoilerMines():
@@ -241,11 +245,11 @@ def clic(tuile):
 
         if event.shiftKey == True:
             if tuile not in drapeaux:
-                # retirerDrapeau(tuile)
-                drapeaux.append(tuile)
-            else:
                 # ajouterDrapeau(tuile)
-                drapeaux.pop(drapeaux.index(tuile))
+                pass
+            else:
+                # retirerDrapeau(tuile)
+                pass
         else:
             if tuile in mines:
                 mine = document.querySelector('#' + tuile)
