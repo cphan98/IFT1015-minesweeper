@@ -133,7 +133,7 @@ def placerMines(largeur, hauteur):
         if tuile not in mines:
             mines.append(tuile)
 
-        repeter = len(mines) <= nbMines
+        repeter = len(mines) < nbMines
 
     return mines
 
