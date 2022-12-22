@@ -153,6 +153,26 @@ def calculerNbClics():
     nbClics += 1
 
 
+def retirerDrapeau(tuile):
+
+    # La procédure retirerDrapeau prend comme paramètre un texte de
+    # l'identifiant d'une tuile ayant déjà un drapeau et le lui retire. La
+    # tuile devient alors une tuile vide. La liste des tuiles marquées est
+    # mise à jour.
+
+    pass
+
+
+def ajouterDrapeau(tuile):
+
+    # La procéure ajouterDrapeau prend comme paramètre un texte de
+    # l'identifiant d'une tuile qui n'a pas de drapeau et lui en ajoute un.
+    # La tuile est donc marquée d'une drapeau. La liste des tuiles marquées
+    # est mise à jour.
+
+    pass
+
+
 def devoilerMines():
 
     # La procédure devoilerMines dévoile l'emplacement de toutes les mines
