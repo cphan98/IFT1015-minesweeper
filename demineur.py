@@ -146,7 +146,6 @@ def calculerNbClics():
     # La fonction calculerNbClics incrémente de 1 le nombre de clics nbClics.
 
     global nbClics
-    nbClics = 0
     nbClics += 1
 
 
