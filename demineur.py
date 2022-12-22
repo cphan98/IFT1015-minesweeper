@@ -250,11 +250,9 @@ def clic(tuile):
 
         if event.shiftKey == True:
             if tuile not in drapeaux:
-                # ajouterDrapeau(tuile)
-                pass
+                ajouterDrapeau(tuile)
             else:
-                # retirerDrapeau(tuile)
-                pass
+                retirerDrapeau(tuile)
         else:
             if tuile in mines:
                 mine = document.querySelector('#' + tuile)
