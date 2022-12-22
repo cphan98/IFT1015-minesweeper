@@ -180,7 +180,8 @@ def init(largeur, hauteur):
     # ajoute le code HTML à l'élément <div id="main"></div>. La matrice des
     # tuiles du démineur est mise à jour.
 
-    global nbRangees, nbColonnes, nbClics
+    global tuilesCliquees, nbRangees, nbColonnes, nbClics
+    tuilesCliquees = []
     nbRangees = hauteur
     nbColonnes = largeur
     nbClics = 0
