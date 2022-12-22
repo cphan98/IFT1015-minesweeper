@@ -227,7 +227,7 @@ def clic(tuile):
                 mine.innerHTML = '<img src="http://codeboot.org/images/minesweeper/mine-red.png"'
 
                 devoilerMines()
-                # devoilerDrapeaux()
+                devoilerDrapeaux()
                 alert('Défaite!')
                 return
 
